@@ -1,0 +1,23 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>🏃 Echoes Athletic Club へようこそ！ 🏃</h1>
+			<p>
+				<img src="/blog-placeholder-3.jpg" />
+			<p>
+		</main>
+		<Footer />
+	</body>
+</html>

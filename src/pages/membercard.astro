@@ -1,0 +1,45 @@
+---
+// Propsを受け取る
+const { name, photo, personalbest, intro } = Astro.props;
+---
+<div class="member-card">
+  <img src={photo} alt={`${name}の写真`} class="member-photo" />
+  <h3>{name}</h3>
+
+  <ul class="pb-list">
+    {Object.entries(personalbest).map(([event, time]) => (
+      <li><strong>{event}</strong>: {time}</li>
+    ))}
+  </ul>
+
+  <p class="intro">{intro}</p>
+</div>
+
+<style>
+  .member-card {
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 8px;
+    max-width: 300px;
+    background: #fdfdfd;
+  }
+  .member-photo {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+  }
+  .pb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5em 0;
+  }
+  .pb-list li {
+    font-size: 0.9em;
+    margin: 0.2em 0;
+  }
+  .intro {
+    font-size: 0.95em;
+    color: #333;
+    margin-top: 0.5em;
+  }
+</style>
